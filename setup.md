@@ -1,4 +1,5 @@
 ```sudo apt install alacritty
+git clone https://github.com:WatchMkr/thermal.git
 git clone https://github.com/pop-os/system76-power.git
 git clone https://github.com/wilicc/gpu-burn.git
 Makefile change - NVCC=${GCCPATH}/bin/nvcc
