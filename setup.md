@@ -9,3 +9,17 @@ cd gpu-burn
 nvim Makefile
 Makefile change - NVCC=${GCCPATH}/bin/nvcc
 ```
+
+```
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 10
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 10
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 20
+sudo update-alternatives --auto gcc 
+sudo update-alternatives --auto g++
+sudo update-alternatives --set gcc /usr/bin/gcc-8
+sudo update-alternatives --set g++ /usr/bin/g++-8
+```
