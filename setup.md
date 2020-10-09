@@ -23,3 +23,42 @@ sudo update-alternatives --auto g++
 sudo update-alternatives --set gcc /usr/bin/gcc-8
 sudo update-alternatives --set g++ /usr/bin/g++-8
 ```
+
+AI Benchmarks
+```
+sudo apt install tensorman
+sudo apt install nvidia-container-runtime
+sudo usermod -aG docker $USER
+ log out and back in
+cd Projects
+git clone https://github.com/tensorflow/benchmarks.git
+cd benchmarks
+```
+
+Inception v3 - FP16
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=inception3 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
+Resnet50 - FP 16
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=resnet50 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
+Resnet152 - FP16
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=resnet152 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
+NASSNET
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=nasnet --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
+VGG16
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=vgg16 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
+System thermal design testing
+The above test are short and good for measuring component performance but not the chassis and its thermal system. Training models take hours or days. Intense GPU use over an extended period of time demonstrates the systems performance in real-world scenarios. Use ```--num_epochs=X``` to lengthen the test. (TODO determine standard number of epochs.)
