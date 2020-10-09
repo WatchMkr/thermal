@@ -50,7 +50,7 @@ Resnet152 - FP16
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=resnet152 --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
-NASSNET
+NASNET
 ```
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=nasnet --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
