@@ -65,7 +65,7 @@ NASNET (fails to run)
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=nasnet --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
-System thermal design testing
+**System thermal design testing**<br>
 The above test are short and good for measuring component performance but not the chassis and its thermal system. Training models take hours or days. Intense GPU use over an extended period of time demonstrates the systems performance in real-world scenarios. Use ```--num_epochs=1``` to lengthen the test. For Resnet50, quad 20180Ti GPUs and batch size 128, each epoch is roughly 10 minutes. 90 epochs trains around 76% accuracy (about 15 hours on 4 2080Ti GPUs).
 
 Resources
