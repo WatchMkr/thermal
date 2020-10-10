@@ -40,6 +40,11 @@ Inception v3 - FP16
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=inception3 --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
+Inception v4 - FP16
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=64 --model=inception3 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
 Resnet50 - FP 16
 ```
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=resnet50 --variable_update=parameter_server --use_fp16=True --num_gpus=4
@@ -47,18 +52,31 @@ tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py -
 
 Resnet152 - FP16
 ```
-tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=resnet152 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=64 --model=resnet152 --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
-NASNET
-```
-tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=nasnet --variable_update=parameter_server --use_fp16=True --num_gpus=4
-```
-
-VGG16
+VGG16 (Might be disk IO bound)
 ```
 tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=vgg16 --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
+NASNET (fails to run)
+```
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=128 --model=nasnet --variable_update=parameter_server --use_fp16=True --num_gpus=4
+```
+
 System thermal design testing
-The above test are short and good for measuring component performance but not the chassis and its thermal system. Training models take hours or days. Intense GPU use over an extended period of time demonstrates the systems performance in real-world scenarios. Use ```--num_epochs=X``` to lengthen the test. (TODO determine standard number of epochs.)
+The above test are short and good for measuring component performance but not the chassis and its thermal system. Training models take hours or days. Intense GPU use over an extended period of time demonstrates the systems performance in real-world scenarios. Use ```--num_epochs=1``` to lengthen the test. For Resnet50, quad 20180Ti GPUs and batch size 128, each epoch is roughly 10 minutes. 90 epochs trains around 76% accuracy (about 15 hours on 4 2080Ti GPUs).
+
+Resources
+
+Benchmarks
+https://github.com/tensorflow/benchmarks
+TF CNN Benchmark details
+https://github.com/tensorflow/benchmarks/tree/master/scripts/tf_cnn_benchmarks
+Tools for preparing datasets
+https://github.com/tensorflow/tpu/tree/master/tools/datasets#imagenet_to_gcspy
+Imagenet Setup
+https://cloud.google.com/tpu/docs/imagenet-setup
+Image downloader
+https://github.com/mf1024/ImageNet-datasets-downloader
