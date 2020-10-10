@@ -68,15 +68,15 @@ tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py -
 **System thermal design testing**<br>
 The above test are short and good for measuring component performance but not the chassis and its thermal system. Training models take hours or days. Intense GPU use over an extended period of time demonstrates the systems performance in real-world scenarios. Use ```--num_epochs=1``` to lengthen the test. For Resnet50, quad 20180Ti GPUs and batch size 128, each epoch is roughly 10 minutes. 90 epochs trains around 76% accuracy (about 15 hours on 4 2080Ti GPUs).
 
-Resources
+**Resources**<br>
 
-Benchmarks
-https://github.com/tensorflow/benchmarks
-TF CNN Benchmark details
-https://github.com/tensorflow/benchmarks/tree/master/scripts/tf_cnn_benchmarks
-Tools for preparing datasets
-https://github.com/tensorflow/tpu/tree/master/tools/datasets#imagenet_to_gcspy
-Imagenet Setup
-https://cloud.google.com/tpu/docs/imagenet-setup
-Image downloader
-https://github.com/mf1024/ImageNet-datasets-downloader
+Benchmarks<br>
+https://github.com/tensorflow/benchmarks<br>
+TF CNN Benchmark details<br>
+https://github.com/tensorflow/benchmarks/tree/master/scripts/tf_cnn_benchmarks<br>
+Tools for preparing datasets<br>
+https://github.com/tensorflow/tpu/tree/master/tools/datasets#imagenet_to_gcspy<br>
+Imagenet Setup<br>
+https://cloud.google.com/tpu/docs/imagenet-setup<br>
+Image downloader<br>
+https://github.com/mf1024/ImageNet-datasets-downloader<br>
