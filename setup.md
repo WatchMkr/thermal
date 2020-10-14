@@ -24,6 +24,13 @@ sudo update-alternatives --set gcc /usr/bin/gcc-8
 sudo update-alternatives --set g++ /usr/bin/g++-8
 ```
 
+Using IPMI
+```
+sudo ipmitool sdr dump /tmp/ipmitool.cache
+sudo ipmitool sdr -S /tmp/ipmitool.cache type Temperature
+```
+
+
 AI Benchmarks
 ```
 sudo apt install tensorman
