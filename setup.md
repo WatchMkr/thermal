@@ -49,7 +49,7 @@ tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py -
 
 Inception v4 - FP16
 ```
-tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=64 --model=inception3 --variable_update=parameter_server --use_fp16=True --num_gpus=4
+tensorman run --gpu python -- ./scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --batch_size=64 --model=inception4 --variable_update=parameter_server --use_fp16=True --num_gpus=4
 ```
 
 Resnet50 - FP 16
