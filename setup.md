@@ -21,6 +21,13 @@ sudo update-alternatives --set g++ /usr/bin/g++-8
 
 ```make```
 
+Watts
+```
+wget https://raw.githubusercontent.com/jackpot51/dotfiles/main/files/bin/cpu-watts
+chmod +x cpu-watts
+./cpu-watts
+```
+
 Using IPMI
 ```
 sudo ipmitool sdr dump /tmp/ipmitool.cache
