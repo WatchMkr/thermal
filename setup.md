@@ -23,7 +23,7 @@ chmod +x cpu-watts
 
 Using GPU Burn (from the gpuburn directory)
 ```
-./gpuburn
+./gpuburn -tc 600
 ```
 
 Using stress-ng (10 minutes, all CPU threads)
