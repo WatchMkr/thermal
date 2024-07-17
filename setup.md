@@ -31,6 +31,21 @@ Using stress-ng (10 minutes, all CPU threads)
 stress-ng --cpu 0 --timeout 10m
 ```
 
+Watch CPU freq on all cores
+```
+watch -n 1 "cat /proc/cpuinfo | grep 'MHz'"
+```
+
+Watch sensors
+```
+watch sensors
+```
+
+Watch nvidia fan, temp and watts
+```
+watch nvidia-smi
+```
+
 Using IPMI
 ```
 sudo ipmitool sdr dump /tmp/ipmitool.cache
