@@ -46,6 +46,19 @@ Watch nvidia fan, temp and watts
 watch nvidia-smi
 ```
 
+Testing new fans curves that are managed by thelio-io. git clone the thermal and system76-power repos mentions at the top of this doc, then:
+```
+sudo apt install debhelper cargo libdbus-1-dev libusb-1.0-0-dev
+cd ~/Project/
+cp thermal/system76-power-rebuild.sh ../system76-power
+cd system76-power
+chmod system76-power-rebuild.sh
+```
+Use a text editor to modify fan curves in src/fan.rs. To rebuild and test the fan curves, run the following command and reboot.
+```
+./system76-power-rebuild.sh
+```
+
 Using IPMI
 ```
 sudo ipmitool sdr dump /tmp/ipmitool.cache
